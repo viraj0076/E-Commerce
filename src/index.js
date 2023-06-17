@@ -1,13 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "react-toastify/dist/ReactToastify.css";
+import { Provider } from "react-redux";
+import { Store} from "./ReduxStore/Store";
+import { app } from "./FireBase";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={Store} app={app}>
+        <App />
+    </Provider>
   </React.StrictMode>
 );
 
